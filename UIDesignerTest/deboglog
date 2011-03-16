@@ -1,0 +1,117 @@
+145show version
+146set print static-members off
+147set breakpoint pending on
+148set print elements 10000
+149set overload-resolution off
+150handle SIGSEGV nopass stop print
+151set unwindonsignal on
+152set width 0
+153set height 0
+154-interpreter-exec console "maintenance set internal-warning quit no"
+155-interpreter-exec console "maintenance set internal-error quit no"
+156-interpreter-exec console "python execfile('/Applications/Qt Creator.app/Contents/Resources/gdbmacros/dumper.py')"
+157-interpreter-exec console "python execfile('/Applications/Qt Creator.app/Contents/Resources/gdbmacros/gdbmacros.py')"
+158-interpreter-exec console "bbsetup"
+159-file-exec-and-symbols "/Users/qtsdk/Qtestrojects/UIDesignerTest-build-simulator/UIDesignerTest.app/Contents/MacOS/UIDesignerTest"
+160-break-list
+161-break-insert -l -1 -f "\"mainwindow.cpp\":18"
+162-break-insert -l -1 -f "\"mainwindow.cpp\":19"
+163info line *0x100003187
+164info line *0x10000319c
+165-exec-run
+166p 4
+167info shared
+168-break-list
+169-stack-list-arguments 2 0 0
+170-stack-list-locals 2
+171-stack-list-frames 0 20
+172-thread-list-ids
+173-data-list-register-names
+174-data-list-register-values x
+175-stack-select-frame 0
+176-var-delete "local.strText"
+177-var-create "local.strText" * "strText"
+178-stack-list-arguments 2 0 0
+179-stack-list-locals 2
+180-data-list-register-values x
+181-var-evaluate-expression "local.strText"
+<Rebuild Watchmodel 63>
+<Rebuild Watchmodel 64>
+<Rebuild Watchmodel 65>
+--- token barrier ---
+182-exec-next
+183-stack-list-arguments 2 0 0
+184-stack-list-locals 2
+185-stack-list-frames 0 20
+186-thread-list-ids
+187-data-list-register-values x
+188-stack-select-frame 0
+189-var-delete "local.strText"
+190-var-create "local.strText" * "strText"
+191-stack-list-arguments 2 0 0
+192-stack-list-locals 2
+193-data-list-register-values x
+<Rebuild Watchmodel 66>
+<Rebuild Watchmodel 67>
+194-var-evaluate-expression "local.strText"
+<Rebuild Watchmodel 68>
+195-var-delete "local.strText"
+196-var-create "local.strText" * "strText"
+<Rebuild Watchmodel 69>
+<Rebuild Watchmodel 70>
+<Rebuild Watchmodel 71>
+197-var-evaluate-expression "local.strText"
+<Rebuild Watchmodel 72>
+<Rebuild Watchmodel 73>
+198-var-list-children --all-values "local.strText"
+<Rebuild Watchmodel 74>
+199-var-list-children --all-values "local.strText.private"
+<Rebuild Watchmodel 75>
+<Rebuild Watchmodel 76>
+<Rebuild Watchmodel 77>
+200-var-list-children --all-values "local.strText.private.d"
+<Rebuild Watchmodel 78>
+<Rebuild Watchmodel 79>
+--- token barrier ---
+201-exec-next
+202-stack-list-arguments 2 0 0
+203-stack-list-locals 2
+204-stack-list-frames 0 20
+205-thread-list-ids
+206-data-list-register-values x
+207-stack-select-frame 0
+208-var-delete "local.strText"
+209-var-create "local.strText" * "strText"
+210-stack-list-arguments 2 0 0
+211-stack-list-locals 2
+212-data-list-register-values x
+213-var-evaluate-expression "local.strText"
+<Rebuild Watchmodel 80>
+<Rebuild Watchmodel 81>
+<Rebuild Watchmodel 82>
+214-var-delete "local.strText"
+215-var-create "local.strText" * "strText"
+216-var-list-children --all-values "local.strText"
+<Rebuild Watchmodel 83>
+<Rebuild Watchmodel 84>
+217-var-list-children --all-values "local.strText.private"
+<Rebuild Watchmodel 85>
+218-var-evaluate-expression "local.strText"
+<Rebuild Watchmodel 86>
+<Rebuild Watchmodel 87>
+<Rebuild Watchmodel 88>
+<Rebuild Watchmodel 89>
+219-var-list-children --all-values "local.strText"
+<Rebuild Watchmodel 90>
+220-var-list-children --all-values "local.strText.private"
+<Rebuild Watchmodel 91>
+221-var-list-children --all-values "local.strText.private.d"
+<Rebuild Watchmodel 92>
+<Rebuild Watchmodel 93>
+<Rebuild Watchmodel 94>
+<Rebuild Watchmodel 95>
+222-var-list-children --all-values "local.strText.private.d"
+<Rebuild Watchmodel 96>
+<Rebuild Watchmodel 97>
+223kill
+224-gdb-exit
